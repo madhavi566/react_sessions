@@ -22,10 +22,10 @@ const div1 = React.createElement('div', "{id:'div', class:'container-fluid'}" ,[
  
 Example with JSX  : 
 
-<div id = 'div' class="container-fluid">
-<h1 id = 'title1' class="heading1"> This is heading1</h1>
-<h2 id = 'title2' class="heading2"> This is heading2</h2>
-</div> 
+## <div id = 'div' class="container-fluid">
+## <h1 id = 'title1' class="heading1"> This is heading1</h1>
+## <h2 id = 'title2' class="heading2"> This is heading2</h2>
+## </div> 
 
 
 IS ES6 mandatory for react ? 
