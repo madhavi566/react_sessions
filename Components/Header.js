@@ -1,10 +1,20 @@
+import Logo from '../assets/img/food_love.jpeg'
 
-const Title = <a href="/"> <b className="title">Vintage</b> <img className="food" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyOiu6Yh_P14AlkIVM9L2syu7AVNOAcVHiqg&usqp=CAU" alt="header"/></a>
+const Title  = () => {
+return (
+<>
+<a href="/"> 
+<img className="logo" 
+src = {Logo} alt="logo"/></a>
+</>
+)}
+
 
 const Header = () =>{
+
     return ( 
     <div className="header">
-      {Title}
+       {Title()}
        <div className="nav-items">
       <ul>
           <li>Home</li>
