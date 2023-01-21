@@ -1,4 +1,4 @@
-<!-- 
+
 session 7 : 
 -----------
 What are the various ways to add images to your app ? 
@@ -61,4 +61,4 @@ Security issues
 DIfference between client side routing vs server side routing 
 
 client side routing : data will sits in youar appliction and no need of server requests 
-server side routing : data need to get from  server and show in the application  -->
+server side routing : data need to get from  server and show in the application 
