@@ -1,133 +1,143 @@
 
+session 6: 
 
-session 4:Assignment : 
+What is micorservice 
 
-Is jsx mandatory to react ? 
+Microservice is an architectural style ,that structures an application 
+as a collection of services which are 
+
+* Indepdendetly deployable 
+* Lossey coupled
+* Oragnized around business capabiltites
+* Owned by small team 
+* Highly maintainable and testable 
+
+What is a monlith 
+
+monolith is a single unified unit 
+
+less cross cutting concerns 
+Seam less debugging and testing 
+prompt and single deployment 
+disadvantages : 
+code complexity 
+interdepednent components
+Limted scalabiltiy 
+New technology barriers 
 
 
-Jsx is a syntatic sugar to react , which makes developer work much easier 
+Difference between monolith vs micorservice
 
-it is also convenient to use react with out JSX 
+Monolith  : 
+------------
+Adv : 
 
-JSX => React.createElement() => Object => HTML (DOM) 
+less cross cutting concerns 
+Seam less debugging and testing 
+prompt and single deployment 
+development 
+performance 
 
-Example with out JSX  : 
+disadvantages : 
+slower development speed 
+Scalabilty
+realiabiltiy 
+Lack of flexibility
+interdepednent components
+Limted scalabiltiy 
+New technology barriers 
 
-const heading1 = React.createElement('h1', "{id:'title1', class:'heading1'}" ,'This is heading1')
-const heading2 = React.createElement('h2', "{id:'title2', class:'heading2'}" ,'This is heading2')
-
-const div1 = React.createElement('div', "{id:'div', class:'container-fluid'}" ,[heading1])
  
-Example with JSX  : 
-
-<div id = 'div' class="container-fluid">
-<h1 id = 'title1' class="heading1"> This is heading1</h1>
-<h2 id = 'title2' class="heading2"> This is heading2</h2>
-</div> 
-
-
-IS ES6 mandatory for react ? 
-No , not mandatory but With ES6 we write less do more 
-
-ES6 is 6 th version of ECMA script programming language 
-ECMA script is the standaraization of Javascript which was released in 2015 and renamed as es6
-
-{TitleComponent}
-
-TitleComponent is a Varaible with in the paranthesis we can write any js code (variable,function expression)
+Microservice : 
+-----------
+adv:
+agilty :working with small teams 
+Felxible sacling 
+continous deployment 
+maintainable and testable 
+tedchnology flexibility
+high relaiability
+happier teams 
 
 
-<TitleComponent/>
-Self closing functional component
-rendering functional component in react
+disadv: 
+debugging chanllenges
+development sprwl 
+infrastructure costs 
+lcak of standaridzation
+lack of clear ownership
+debugging challenges
 
-<TitleComponent><TitleComponent/>
-Functional component rendering in react
+Why do we need a use Effect ? 
 
-How Can I write comments in JSX
-// 
-
-{/* single line comment  */}
-
-What is react.fragment and <></>
-
-React.fragment is a component 
-
-Fragments let you group a list of childrens without adding extra nodes to the DOM 
+is a function which takes two parameters one is call back function adn other is depdency array 
+If there is no depdencey array it will call only once 
+First component render and then use effect will be called 
 
 
-Virtual Dom :
+What is Optional chaining : 
 
-It is a tree representation of DOM. Updating the virtual DOM is fast than DOM 
+Optional chaining operator accesses an object's property or calls a function. If accessed object /function called is
+undefined/null it does not throw an error but returns undefined 
 
-Mechanism is to update DOM manipulations by comapring two  rendered trees to determine 
-exactly what has changed and update only the changed node 
+What is a Shimmer UI ?
 
-In react we have reconcilaiation which uses diff algorith to check the diffenece in DOM nodes 
-by using key as an attribute to find the diff between old and new changes 
-
-In react 16 react fiber is the engine used by reconciliation 
+A shimmer UI resembles the pages actual  UI , for better user experience. 
+It mimcs the actual page layout by showing its elements in a shape similar to actual content
 
 
-What is react fiber 
+What is difference between js expression and js statement ? 
 
-Fiber allows reconciliation and rendering in two pahses 
+JS expressions are something which produces value 
 
-reaconcilataion : 
+Expression fills the slot and make the statement 
 
-is an alogorithm to understand the diff between 2 DOM trees 
-list of all changes to be rendered in th UI  
+2+3+5 =>  is an expression 
 
-Commit  :
+const sum = 2+3+5 => is an statement
 
-React tells DOM to render the changes list 
+What is conditional rendering ? 
 
+rendering based on the condition which is explained 
 
-Why we need keys in react ? 
-In case of children elements 
-We need keys in react to make the work easy to reconciler which helps to understand the difference what';s new and want's old 
-
-When do we need keys in react ? 
-
-While per formaing any operations on children like adding any li children element to ul parent element ,
-react reconciler get to know the difference only with the hlep of react 
-other wise it will render the complete li nodes present under ul parent, which decrease the performance 
-
-Can we use index as keys in React  ?
-
-no , if we use index , the index will be kept same if you add element using unshift , new item will be added at 0 index , 
-
-but react will re-render the last element   since the length of the array/object would increase .
+EX:  incase of restaurants length 0 we need to show shimmer 
 
 
-What  is props in react ? 
+What is CORS 
 
-Passing are arguments passed 
+origin A   origin B 
 
-parameters are received 
-Arguments are passed  
+For complex request browser first calls pre flight request from origin A to origin B to check 
+Whether origin A is allowed to make a call at origin B  
 
-a,b,c are parameters here 
-function xyz(a,b,c) {
-...
-...
-} 
+If preflight is succeeded normal call xhr call can be made from origin A to origin B .
 
+Browsers follow this web standaraization for security and safe 
 
-xyz(m,n,p) =>  m,n,p are arguments 
+In preflight request browser sends an HTTP request using the oprtions method to 
+other source of origin 
 
+Acces control request method 
+Access control request headers
 
-we can pass by using destructuring , or in object manner and we can iterate them by using map method 
-Config driven UI  : 
-
-Application should be sacalable ,modular, 
-
-An ui said to be COnfig driven since one set of component/module would not disturb in dynamic loading of them
+response 
+Access control allow origin 
+Access control allow methods 
+Access control allow headers 
 
 
+What is async and await 
+
+async and await for asynchronous promise based behaviour 
+Asyn functions are expressions 
+
+await expressions make promise returning functions will wait untill it is resolved or rejected 
 
 
+What is const json = await data.json()  ? 
 
+as it is used in async fn, await makes till the response is resolved untill completion 
 
+.json() method takes json as input and converts to javascript object
 
 
