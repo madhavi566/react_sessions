@@ -1,64 +1,96 @@
 
-session 7 : 
------------
-What are the various ways to add images to your app ? 
+1) How do you create nested routes react router dom configuration
 
-Structure  : Add it in assets/img 
+we can create child routes using children
 
-Code : 
+we can create nested routes using 
 
-one way (Add an image from your computer)
-----------
-import Logo from "relative path there"
-
-in jsx : 
-
-<img src ={Logo} alt="logo"/>
-
-second wat
----------
-
-<img src ="https://reactjs.org/logo-og.png">
-
-
-inserting a background image with styles 
-
-import UrLogo from "relative path there"
-
-<div style={{backgroundImage :UrLogo}}> 
-this is overlay text
-</div>
-
-
-What would happen if we console.log(useState());
-
-logs undefined ,function incase of no initial value provided
-logs intila value,function incase of initial value provided
+const appRouter = createBrowserRouter([
+{
+path : '/',
+element : <AppLayout/>,
+errorElement : <Error/>,
+children : [
+		{
+		path : '/',
+		element : <Body/>,
+		children :[
+		{
+		path : '',		element : <children/>
+		}
+		]
+		},
+		{
+		path : '/about',
+		element : <Suspense fallback = {<h1>....loading</h1>}><About/></Suspense>,
+		},
+]
+]
+}
+])
 
 
-How will use Effect behave if we dont add a depednecy array ? 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router = {appRouter})	
 
-After render , useEffect will be called continuously   
+
+2) 
+
+Create browser router 
+uses DOM history API to update the URL and manage the history stack. 
+
+Create Hash router 
+
+It will use the hash portion of url to manage application url 
+
+Create memory router 
+
+memory router manages its own hisory stack in memory.For running react in any non browser environment. 
+
+Router porvider 
+
+All router objects passed to the component to render your app.
+
+3) order of life cycle methods in call based components
+
+constructor 
+render 
+component did mount 
+
+4 ) Why do we use Component did mount ?
+
+Component did mount will be called once after first render 
+
+Best place to make API call 	
+
+5) Why do we use component will unmount ? Show with example.
+
+When we are moving out of the component , component will unmount be called 
 
 
-What is SPA ? 
-rewriting the page rather than loading new pages from server 
-Ex :facebook,gmail,twitter,
+componentWillUnmount() {
+	cleartimer(1000)
+}
 
-advantages
-----------
-quick loading time 
-seam less experience 
-ease in buidling apps 
-less bandwidth 
+6) Why do we use super (props) in constructor ?
 
-disadvantages
-----------
-Dont perform well with SEO 
-Uses a lot of browser resources
-Security issues 
+Props are used to pass data from parent components to child components.
 
-DIfference between client side routing vs server side routing 
+parent components can updaten props but child components can read only them.
 
-client side routing : data will sits in youar appliction and no need of server requests 
-server side routing : data need to get from  server and show in the application 
+We require props inside child component. Super() calls constructor of parent class. 
+Using super constructor with props argument basically allows accessing this.props in 
+constructor function. 
+
+7) Why can't we have call back function of useeffect async ? 
+
+since use effect returns jsx,
+
+but if we use useeffect async it returns promise 
+
+
+Coding Assignment : 
+
+* in folder
+
+
